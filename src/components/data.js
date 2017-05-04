@@ -44,7 +44,7 @@ export default class Data extends React.Component {
       )
     }
 
-    if (!Linking.canOpenURL(scannedData)) {
+    if (!/^https?:\/\//.test(scannedData)) {
       return (
         <View style={styles.container}>
           <Text>{scannedData}</Text>
