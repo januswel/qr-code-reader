@@ -38,6 +38,12 @@ export default class Data extends React.Component {
 
   render() {
     const { scannedData } = this.props.navigation.state.params
+    if (scannedData == null) {
+      return (
+        <View />
+      )
+    }
+
     if (!Linking.canOpenURL(scannedData)) {
       return (
         <View style={styles.container}>
